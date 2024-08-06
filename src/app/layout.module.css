@@ -5,7 +5,7 @@
   width: 96%;
   height: 90%;
   border: 1px solid transparent;
-  animation: borderAnimation 5s infinite linear;
+  
 }
 @keyframes borderAnimation {
   0% {

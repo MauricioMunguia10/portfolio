@@ -1,3 +1,23 @@
-:root{
-  background-color: #052432;
+:root {
+  background-color: black;
+  font-family: "Open Sans", sans-serif;
+  animation: backgroundAnimation 5s infinite;
 }
+@keyframes backgroundAnimation {
+  0% {
+    background-color: #000000; /* Negro */
+  }
+  25% {
+    background-color: #121212; /* Gris oscuro */
+  }
+  50% {
+    background-color: #212221; /* Gris medio */
+  }
+  75% {
+    background-color: #121212; /* Gris oscuro */
+  }
+  100% {
+    background-color: #000000; /* Negro */
+  }
+}
+
