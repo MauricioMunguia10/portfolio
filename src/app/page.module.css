@@ -1,4 +1,4 @@
-.home{
+.home {
   position: absolute;
   top: 100px;
   left: 5%;
@@ -9,17 +9,17 @@
   display: flex;
   border-radius: 30px;
 }
-.logo{
+.logo {
   position: relative;
   top: 40px;
   left: 40px;
 }
-.name{
+.name {
   position: absolute;
   top: 25px;
   left: 120px;
 }
-.contactButton{
+.contactButton {
   position: absolute;
   top: 25px;
   left: 80%;
@@ -29,15 +29,12 @@
   background-color: white;
   border: 1px black solid;
   font-weight: bold;
-
 }
-.contactButton:hover{
-  background-color: rgb(238, 238, 238);
+.contactButton:hover {
   scale: 1.1;
 }
-.menu{
+.menu {
   position: absolute;
   top: 20px;
   left: 90%;
-
 }

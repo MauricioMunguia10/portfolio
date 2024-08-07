@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./menu.module.css";
 import MenuIcon from "@mui/icons-material/Menu";
+import ContactPageIcon from "@mui/icons-material/ContactPage";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import clsx from "clsx";
 
 const Menu = () => {
@@ -47,7 +49,11 @@ const Menu = () => {
         className={clsx(styles.boxMenu, {
           [styles.visible]: hover || open,
         })}
-      ></div>
+      >
+        <ContactPageIcon sx={{ fontSize: 50 }} />
+        <GitHubIcon sx={{ fontSize: 50 }} />
+        <ContactPageIcon sx={{ fontSize: 50 }} />
+      </div>
     </>
   );
 };
