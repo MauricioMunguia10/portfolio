@@ -1,18 +1,34 @@
 "use client";
+import React from "react";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Menu from "@/components/menu/menu";
-import Cookie from "js-cookie";
 
 const Home = () => {
-  const logOut = () => {
-    Cookie.remove("token");
-    Cookie.remove("roles");
-  };
-  const logIn = () => {
-    Cookie.set("token", "123456789", { httpOnly: true, expires: 1 });
-    Cookie.set("roles", "user", { httpOnly: true, expires: 1 });
-  };
+  async function inicioSesion(event) {
+    event.preventDefault();
+
+    const username = "mau";
+    const password = "123456";
+
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log("Inicio de sesión exitoso:", data.message);
+      // Redirigir o manejar el estado de inicio de sesión exitoso aquí
+    } else {
+      console.error("Error al iniciar sesión:", data.message);
+    }
+  }
+
   return (
     <div className={styles.home}>
       <Image
@@ -23,10 +39,10 @@ const Home = () => {
         className={styles.logo}
       />
       <h1 className={styles.name}>MMG</h1>
-      <button className={styles.contactButton} onClick={logIn}>
+      <button className={styles.contactButton} onClick={inicioSesion}>
         Contact me{" "}
       </button>
-      <button onClick={logOut} style={{ backgroundColor: "red" }}>
+      <button onClick={inicioSesion} style={{ backgroundColor: "red" }}>
         salir
       </button>
       <div className={styles.menu}>
